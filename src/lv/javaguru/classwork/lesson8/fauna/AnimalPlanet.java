@@ -1,4 +1,4 @@
-package lv.javaguru.classwork.lesson8;
+package lv.javaguru.classwork.lesson8.fauna;
 
 public class AnimalPlanet {
 
