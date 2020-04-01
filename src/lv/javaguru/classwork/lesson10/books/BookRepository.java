@@ -12,7 +12,10 @@ public class BookRepository implements Repository<BookEntity> {
 
     @Override
     public BookEntity findById(Long id) {
-        return null;
+        if (!bookRepository.containsKey(id)) {
+            throw new ItemNotFoundException("Book not found by id: " + id);
+        }
+        return bookRepository.get(id);
     }
 
     @Override
@@ -30,6 +33,6 @@ public class BookRepository implements Repository<BookEntity> {
 
     @Override
     public void delete(Long id) {
-
+        bookRepository.remove(id);
     }
 }
